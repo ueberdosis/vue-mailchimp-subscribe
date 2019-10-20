@@ -3,7 +3,7 @@ Renderless Vue.js component for Mailchimp list subscriptions.
 
 ## Props
 
-To use this component you have to pass `login`, `dataCenter`, `userId` and `listId`. This structure of a regular API call may helps you to identify these values:
+To use this component you have to pass `login`, `dataCenter`, `userId` and `listId`. This structure of a regular API call may help you to identify these values:
 
 ```
 https://{login}.{dataCenter}.list-manage.com/subscribe/post?u={userId}&id={listId}
