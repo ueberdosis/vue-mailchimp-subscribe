@@ -1,0 +1,37 @@
+{
+  "name": "vue-mailchimp-subscribe",
+  "version": "0.1.0",
+  "author": "Philipp Kühn",
+  "license": "MIT",
+  "homepage": "https://github.com/philippkuehn/vue-mailchimp-subscribe#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philippkuehn/vue-mailchimp-subscribe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/philippkuehn/vue-mailchimp-subscribe/issues"
+  },
+  "keywords": [
+    "vue",
+    "mailchimp",
+    "newsletter"
+  ],
+  "files": [
+    "dist"
+  ],
+  "source": "src/vue-mailchimp-subscribe.js",
+  "main": "dist/vue-mailchimp-subscribe.js",
+  "module": "dist/vue-mailchimp-subscribe.mjs",
+  "unpkg": "dist/vue-mailchimp-subscribe.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "start": "microbundle watch"
+  },
+  "dependencies": {
+    "jsonp": "^0.2.1",
+    "query-string": "^6.8.3"
+  },
+  "devDependencies": {
+    "microbundle": "^0.11.0"
+  }
+}
