@@ -26,9 +26,10 @@ export default {
 
   data() {
     return {
+      email: null,
       success: false,
       error: null,
-      email: null,
+      loading: false,
     }
   },
 
@@ -54,6 +55,7 @@ export default {
       
       this.success = false
       this.error = null
+      this.loading = true
 
       const url = `//${this.login}.${this.dataCenter}.list-manage.com/subscribe/post-json?${this.data}`
 
@@ -61,6 +63,8 @@ export default {
     },
 
     onResponse(error, data) {
+      this.loading = false
+
       if (error) {
         this.error = error
       }
@@ -85,6 +89,7 @@ export default {
       setEmail: this.setEmail,
       error: this.error,
       success: this.success,
+      loading: this.loading,
     })
   }
 }
