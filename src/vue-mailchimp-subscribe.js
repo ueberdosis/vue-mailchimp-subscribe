@@ -49,7 +49,7 @@ export default {
     },
 
     subscribe() {
-      if (this.email === null) {
+      if (this.email === null || this.loading) {
         return
       }
       
