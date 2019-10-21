@@ -73,9 +73,12 @@ export default {
         this.error = this.formatErrorMessage(data.msg)
       }
 
-      if (!this.error) {
+      if (this.error) {
+        this.$emit('error', this.error)
+      } else {
         this.success = true
         this.email = null
+        this.$emit('success')
       }
     },
 
