@@ -13,7 +13,7 @@ https://{login}.{dataCenter}.list-manage.com/subscribe/post?u={userId}&id={listI
 
 ```vue
 <template>
-  <mailchimp-subscribe login="XXX" data-center="XXX" user-id="XXX" list-id="XXX">
+  <mailchimp-subscribe login="XXX" data-center="XXX" user-id="XXX" list-id="XXX" @error="onError" @success="onSuccess">
     <template v-slot="{ subscribe, setEmail, error, success, loading }">
       <form @submit.prevent="subscribe">
         <input type="email" @input="setEmail($event.target.value)" />
