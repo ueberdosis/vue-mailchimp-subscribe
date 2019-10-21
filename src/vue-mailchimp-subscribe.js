@@ -75,6 +75,7 @@ export default {
 
       if (!this.error) {
         this.success = true
+        this.email = null
       }
     },
 
