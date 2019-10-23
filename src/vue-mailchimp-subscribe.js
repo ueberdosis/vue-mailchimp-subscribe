@@ -3,12 +3,7 @@ import queryString from 'query-string'
 
 export default {
   props: {
-    login: {
-      required: true,
-      type: String,
-    },
-
-    dataCenter: {
+    url: {
       required: true,
       type: String,
     },
@@ -19,11 +14,6 @@ export default {
     },
 
     listId: {
-      required: true,
-      type: String,
-    },
-
-    hiddenInput: {
       required: true,
       type: String,
     },
@@ -44,7 +34,6 @@ export default {
         u: this.userId,
         id: this.listId,
         EMAIL: this.email,
-        [this.hiddenInput]: '',
       })
     },
   },
@@ -58,12 +47,12 @@ export default {
       if (this.email === null || this.loading) {
         return
       }
-      
+
       this.success = false
       this.error = null
       this.loading = true
 
-      const url = `//${this.login}.${this.dataCenter}.list-manage.com/subscribe/post-json?${this.data}`
+      const url = `${this.url}?${this.data}`
 
       jsonp(url, { param: 'c' }, this.onResponse)
     },
@@ -101,5 +90,5 @@ export default {
       success: this.success,
       loading: this.loading,
     })
-  }
+  },
 }

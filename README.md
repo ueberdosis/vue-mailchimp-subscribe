@@ -1,24 +1,13 @@
 # vue-mailchimp-subscribe
 Renderless Vue.js component for Mailchimp list subscriptions.
 
-## Props
-
-To use this component you have to pass `login`, `dataCenter`, `userId`, `listId` and `hiddenInput`. This structure of a regular API call may help you to identify these values:
-
-```
-https://{login}.{dataCenter}.list-manage.com/subscribe/post?u={userId}&id={listId}
-```
-
 ## Usage
-
 ```vue
 <template>
   <mailchimp-subscribe
-    login="XXX"
-    data-center="XXX"
-    user-id="XXX"
-    list-id="XXX"
-    hidden-input="XXX"
+    url="https://xxx.xxx.list-manage.com/subscribe/post-json"
+    user-id="xxx"
+    list-id="xxx"
     @error="onError"
     @success="onSuccess"
   >
