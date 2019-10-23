@@ -22,6 +22,11 @@ export default {
       required: true,
       type: String,
     },
+
+    hiddenInput: {
+      required: true,
+      type: String,
+    },
   },
 
   data() {
@@ -39,6 +44,7 @@ export default {
         u: this.userId,
         id: this.listId,
         EMAIL: this.email,
+        [hiddenInput]: '',
       })
     },
   },
