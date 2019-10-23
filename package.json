@@ -1,6 +1,6 @@
 {
   "name": "vue-mailchimp-subscribe",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "Philipp Kühn",
   "license": "MIT",
   "homepage": "https://github.com/philippkuehn/vue-mailchimp-subscribe#readme",
@@ -25,7 +25,8 @@
   "unpkg": "dist/vue-mailchimp-subscribe.umd.js",
   "scripts": {
     "build": "microbundle",
-    "start": "microbundle watch"
+    "start": "microbundle watch",
+    "prepublish": "yarn build"
   },
   "dependencies": {
     "jsonp": "^0.2.1",
