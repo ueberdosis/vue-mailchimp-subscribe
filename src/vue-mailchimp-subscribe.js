@@ -44,7 +44,7 @@ export default {
         u: this.userId,
         id: this.listId,
         EMAIL: this.email,
-        [hiddenInput]: '',
+        [this.hiddenInput]: '',
       })
     },
   },
