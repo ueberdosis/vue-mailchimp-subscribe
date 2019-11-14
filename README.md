@@ -30,6 +30,14 @@ export default {
   components: {
     MailchimpSubscribe,
   },
+  methods: {
+    onError() {
+      // handle error
+    },
+    onSuccess() {
+      // handle success
+    },
+  },
 }
 </script>
 ```
