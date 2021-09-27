@@ -18,33 +18,35 @@ export default {
       type: String,
     },
   },
-
   data() {
     return {
-      email: null,
+      fields: {},
       success: false,
       error: null,
       loading: false,
     }
   },
-
   computed: {
     data() {
       return queryString.stringify({
         u: this.userId,
         id: this.listId,
-        EMAIL: this.email,
+        ...this.fields,
       })
     },
   },
-
   methods: {
+    // deprecated in favour of `setField('EMAIL', value)`
     setEmail(value = '') {
-      this.email = value.trim()
+      this.fields['EMAIL'] = value.trim()
+    },
+
+    setField(fieldKey, fieldValue) {
+      this.fields[fieldKey] = fieldValue
     },
 
     subscribe() {
-      if (this.email === null || this.loading) {
+      if (!this.fields['EMAIL'] || this.loading) {
         return
       }
 
@@ -72,7 +74,7 @@ export default {
         this.$emit('error', this.error)
       } else {
         this.success = true
-        this.email = null
+        this.fields = {}
         this.$emit('success')
       }
     },
@@ -81,11 +83,11 @@ export default {
       return message.replace('0 - ', '')
     },
   },
-
   render() {
     return this.$scopedSlots.default({
       subscribe: this.subscribe,
       setEmail: this.setEmail,
+      setField: this.setField,
       error: this.error,
       success: this.success,
       loading: this.loading,
